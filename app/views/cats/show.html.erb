@@ -1,4 +1,7 @@
-<h2 style="text-align: center"><%= @cat.name %></h2>
+<% cat = @cat %>
+<% rentals = @rentals %>
+
+<h2 style="text-align: center"><%= cat.name %></h2>
   <table>
     <tr>
       <th>Attribute</th>
@@ -7,21 +10,35 @@
 
     <tr>
       <td>Age</td>
-      <td><%= @cat.age %></td>
+      <td><%= cat.age %></td>
     </tr>
 
     <tr>
       <td>Birth Date</td>
-      <td><%= @cat.birth_date %></td>
+      <td><%= cat.birth_date %></td>
     </tr>
 
     <tr>
       <td>Color</td>
-      <td><%= @cat.color %></td>
+      <td><%= cat.color %></td>
     </tr>
 
     <tr>
       <td>Sex</td>
-      <td><%= @cat.sex %></td>
+      <td><%= cat.sex %></td>
     </tr>
+  </table>
+
+  <h3>Rentals</h3>
+  <table>
+    <tr>
+      <th>Start date</th>
+      <th>End date</th>
+    </tr>
+    <% rentals.each do |rental| %>
+      <tr>
+        <td><%= rental.start_date  %></td>
+        <td><%= rental.end_date  %></td>
+      </tr>
+    <% end %>
   </table>
